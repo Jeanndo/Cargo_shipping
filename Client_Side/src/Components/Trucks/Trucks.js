@@ -35,8 +35,6 @@ const Trucks = ({ setCurrentId }) => {
             <TableCell align="right"><b>Location</b></TableCell>
             <TableCell align="right"><b>Cargo ID</b></TableCell>
             <TableCell align="right"><b>Destination</b></TableCell>
-            <TableCell align="right"><b>Action</b></TableCell>
-            <TableCell align="right"><b>Action</b></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

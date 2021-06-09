@@ -61,11 +61,6 @@ export const deleteTruck = async (req, res) => {
 };
 
 export const getTruck = async (req, res) => {
-  // if(!mongoose.Types.ObjectId.isValid(_id))return res.status(404).send('Not Truck With that id');
-  //const id = req.userId
-  // console.log(id);
-  // const id = req.userId;
-
   try {
     const userTrucks = await CargoTransport.find({ userId: req.userId });
     console.log(userTrucks);

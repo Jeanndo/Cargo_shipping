@@ -8,13 +8,16 @@ const Truck = ({truck,setCurrentId}) => {
   const[user,setUser]= useState(JSON.parse(localStorage.getItem('profile')));
 console.log(user?.result?._id)
   return (
-    <>
+    <>   
+    {(user?.result?.phone===truck.Cargo_ID)&&(
+            <>
             <TableCell component="th" scope="row">
-          {truck.product}
+             {truck.product}
             </TableCell>
             <TableCell align="right">{truck.quantity}</TableCell>
             <TableCell align="right"><LocationOnIcon  style={{color:'#00bb77'}}/>{truck.Location}</TableCell>
-            
+             </>
+    )}
   </>
   );
 };
