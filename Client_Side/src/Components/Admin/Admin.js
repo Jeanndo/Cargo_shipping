@@ -5,11 +5,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import { useDispatch } from "react-redux";
-import {getTrucks} from '../../redux/actions/trucks';
-import {getUsers} from '../../redux/actions/user';
-import Users from '../Users/Users';
+import {getTrucks} from '../../redux/actions/admin';
 import Navbar from './Navbar/Navbar';
-import { useSelector} from 'react-redux';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -30,14 +28,11 @@ const Admin = ()=>{
   const dispatch = useDispatch();
 
   useEffect(()=>{
-  dispatch(getTrucks(),getUsers());
+  dispatch(getTrucks());
   },[dispatch]);
-  
-  const users= useSelector((state) => state.users);
-   console.log(users)
 
     return (
-   <div className={`${classes.root} container`}>
+   <div className={`${classes.root} container adminContainer`}>
   
     <Grid container spacing={3}>
       <Grid item xs={12}>
@@ -49,12 +44,6 @@ const Admin = ()=>{
           <Trucks setCurrentId={setCurrentId}/>
         </Paper>
       </Grid>
-      {/* <Grid item xs={12} sm={4}>
-        <Paper className={classes.paper}>
-          <Users
-          />
-          </Paper>
-      </Grid> */}
     </Grid>
    </div>
     )

@@ -10,12 +10,16 @@ export const signin = (formData, history) => async (dispatch) => {
     dispatch({ type: AUTH, data });
 
     console.log(data?.result?.name);
-    if(data?.result?.role==="user"){
+    if (data?.result?.role === "driver" || data?.result?.role === "DRIVER") {
       history.push("/driver");
-    }else if(data?.result?.role==="admin"||data?.result?.role==="ADMIN"){
+    } else if (
+      data?.result?.role === "admin" ||
+      data?.result?.role === "ADMIN"
+    ) {
       history.push("/admin");
+    }else if(data?.result?.role === "client"|| data?.result?.role === "CLIENT") {
+      history.push("/client");
     }
-   
   } catch (error) {
     console.log(error);
   }
@@ -26,8 +30,16 @@ export const signup = (formData, history) => async (dispatch) => {
     //signup the user
     const { data } = await api.signUp(formData);
     dispatch({ type: AUTH, data });
-
-    history.push("/admin");
+    if (data?.result?.role === "driver" || data?.result?.role === "DRIVER") {
+      history.push("/driver");
+    } else if (
+      data?.result?.role === "admin" ||
+      data?.result?.role === "ADMIN"
+    ) {
+      history.push("/admin");
+    } else if( data?.result?.role === "client"|| data?.result?.role === "CLIENT") {
+      history.push("/client");
+    }
   } catch (error) {
     console.log(error);
   }

@@ -1,9 +1,11 @@
-import { CREATE_TRUCK, UPDATE_TRUCK,DELETE, FETCH_ALL_TRUCK} from '../../constants/actionTypes';
+import { CREATE_TRUCK, UPDATE_TRUCK,DELETE, FETCH_ALL_TRUCK, FETCH_TRUCK} from '../../constants/actionTypes';
 
  const truckReducer = (trucks =[], action) => {
   switch (action.type) {
     case FETCH_ALL_TRUCK:
       return action.payload;
+    case FETCH_TRUCK:
+      return action.payload.truck;
     case CREATE_TRUCK:
       return [...trucks, action.payload];
     case UPDATE_TRUCK:

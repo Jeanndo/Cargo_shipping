@@ -66,7 +66,7 @@ const NavBar = () => {
       >
         <Fade in={open}>
           <div className={classes.paper}>
-            <Auth/>
+            <Auth handleClose={handleClose}/>
           </div>
         </Fade>
       </Modal>
@@ -74,8 +74,6 @@ const NavBar = () => {
      <AppBar className={classes.appBar} position="static" color="inherit">
       <div className={classes.brandContainer}>
         <Typography
-          component={Link}
-           to="/admin"
           className={classes.heading}
           variant="h6"
           align="center"
@@ -84,7 +82,7 @@ const NavBar = () => {
         </Typography>
         <img className={classes.image} src={Cargo} alt="icon" height="60" />
         <p onClick={handleOpen} style={{cursor:'pointer',backgroundColor:'#00bb77',marginLeft:'2%',color:'#fff'}}>ADD</p>
-     
+        <p onClick={handlePrint} style={{cursor:'pointer',backgroundColor:'#00bb77',marginLeft:'5%',color:'#fff'}}>Print</p>
       </div>
 
       <Toolbar className={classes.toolbar}>

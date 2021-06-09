@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Form = ({currentId,setCurrentId})=>{
     const classes = useStyles();
-   const [truckData,setTrucData] = useState({driver:'',licensePlate:'',product:'',quantity:'',destination:''});
+   const [truckData,setTrucData] = useState({driver:'',licensePlate:'',product:'',quantity:'',Location:'',Cargo_ID:'',destination:''});
    const truck = useSelector((state)=>currentId?state.trucks.find((truck)=>truck._id===currentId):null)
    const dispatch =useDispatch();
    const user =JSON.parse(localStorage.getItem('profile'));
@@ -37,7 +37,7 @@ const Form = ({currentId,setCurrentId})=>{
 
     const clear = ()=>{
    setCurrentId(null);
-   setTrucData({driver:'',licensePlate:'',product:'',quantity:'',destination:''});
+   setTrucData({driver:'',licensePlate:'',product:'',quantity:'',Location:'',Cargo_ID:'',destination:''});
    }
 
 console.log("TruckData",truckData);
@@ -77,6 +77,22 @@ console.log("TruckData",truckData);
             onChange={(e)=>setTrucData({...truckData,quantity:e.target.value})}
           />
           <TextField
+            label="Location"
+            placeholder="Location"
+            multiline
+            variant="outlined"
+            value={truckData.Locatin}
+            onChange={(e)=>setTrucData({...truckData,Location:e.target.value})}
+          />
+          <TextField
+            label="Cargo-ID"
+            placeholder="Cargo ID"
+            multiline
+            variant="outlined"
+            value={truckData.Cargo_ID}
+            onChange={(e)=>setTrucData({...truckData,Cargo_ID:e.target.value})}
+          />
+          <TextField
             label="Destination"
             placeholder="Destination"
             multiline
@@ -84,6 +100,7 @@ console.log("TruckData",truckData);
             value={truckData.destination}
             onChange={(e)=>setTrucData({...truckData,destination:e.target.value})}
           />
+           
         </div>
         <Button type="submit"variant="contained" color="primary">SAVE</Button>
       </form>

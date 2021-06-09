@@ -20,7 +20,6 @@ const useStyles = makeStyles({
 const Trucks = ({ setCurrentId }) => {
   const classes = useStyles();
   const trucks = useSelector((state) => state.trucks);
- 
   console.log(trucks.length);
 
   return (
@@ -33,6 +32,8 @@ const Trucks = ({ setCurrentId }) => {
             <TableCell align="right"><b>License</b> </TableCell>
             <TableCell align="right"><b>Product</b></TableCell>
             <TableCell align="right"><b>Quantity</b></TableCell>
+            <TableCell align="right"><b>Location</b></TableCell>
+            <TableCell align="right"><b>Cargo ID</b></TableCell>
             <TableCell align="right"><b>Destination</b></TableCell>
             <TableCell align="right"><b>Action</b></TableCell>
             <TableCell align="right"><b>Action</b></TableCell>
