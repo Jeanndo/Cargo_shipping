@@ -1,12 +1,12 @@
 import React,{useState,useEffect} from 'react';
 import Form from '../Form/Form';
-import Trucks from '../Trucks/Trucks';
+import Trucks from './Trucks/Trucks';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import { useDispatch } from "react-redux";
 import {getTrucks} from '../../redux/actions/trucks';
-import Navbar from '../Navbar/Navbar';
+import Navbar from './Navbar/Navbar';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -30,7 +30,7 @@ const Driver = ()=>{
   },[dispatch]);
   
     return (
-   <div className={`${classes.root} container`}>
+   <div className={`${classes.root} container driver-container`}>
     <Grid container spacing={3}>
       <Grid item xs={12}>
       <Navbar/>

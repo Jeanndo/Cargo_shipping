@@ -5,7 +5,8 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import truckRoutes from './routes/Trucks.js';
 import userRoutes from './routes/users.js';
-
+import adminRoutes from './routes/adminRoutes.js';
+import employeeRoutes from './routes/employeeRoutes.js';
 
 const app = express();
 
@@ -18,6 +19,9 @@ app.use(cors());
 
 app.use('/trucks', truckRoutes);
 app.use('/user',userRoutes);
+app.use('/admin',adminRoutes);
+app.use('/employee',employeeRoutes);
+
 app.get('/',(req,res)=>{
     res.send('Hello To Truck-App API');
 });

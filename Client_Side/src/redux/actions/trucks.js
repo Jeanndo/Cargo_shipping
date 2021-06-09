@@ -48,8 +48,20 @@ export const getTruck= (id) => async (dispatch) => {
   try {
    const {data} =  await api.getTruck(id)
 
-    dispatch({ type:FETCH_TRUCK, payload: data});
+    dispatch({ type:FETCH_TRUCK, payload:{truck:data}});
   } catch (error) {
     console.log(error.message);
   }
 };
+
+// export const getPost = (id) => async (dispatch) => {
+//   try {
+//     dispatch({ type: START_LOADING });
+
+//     const { data } = await api.fetchPost(id);
+
+//     dispatch({ type: FETCH_POST, payload: { post: data } });
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };

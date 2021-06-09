@@ -5,6 +5,7 @@ import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import {deleteTruck} from "../../../redux/actions/trucks";
 import {Button} from "@material-ui/core";
+import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 const Truck = ({truck,setCurrentId}) => {
   const dispatch = useDispatch();
@@ -18,9 +19,11 @@ console.log(user?.result?._id)
             <TableCell align="right">{truck.licensePlate}</TableCell>
             <TableCell align="right">{truck.product}</TableCell>
             <TableCell align="right">{truck.quantity}</TableCell>
+            <TableCell align="right"><LocationOnIcon style={{color:'#00bb77'}}/>{truck.Location}</TableCell>
+            <TableCell align="right">{truck.Cargo_ID}</TableCell>
             <TableCell align="right">{truck.destination}</TableCell>
             <TableCell align="right">
-            {(user?.result?._id===truck.userId)&&(
+            {(user?.result?.role==="admin"||user?.result?.role==="ADMIN")&&(
              <Button size="small">
               <EditIcon 
              style={{cursor:'pointer',color:'#00bb77'}}
@@ -30,7 +33,7 @@ console.log(user?.result?._id)
               )} 
              </TableCell>
             <TableCell align="right">
-            {(user?.result?._id===truck.userId)&&(
+            {(user?.result?.role==="admin"||user?.result?.role==="ADMIN")&&(
                <Button size="small">
                 <DeleteIcon  style={{cursor:'pointer',color:'#00bb77'}}
                 onClick={()=>dispatch(deleteTruck(truck._id))}/>
