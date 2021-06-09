@@ -4,7 +4,7 @@ import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import { AppBar, Avatar, Typography,Toolbar,Button } from "@material-ui/core";
 import useStyles from "./styles";
-import Cargo from "../../../Assets/newlogo.png";
+import Cargo from "../../../../Assets/newlogo.png";
 import {Link,useHistory,useLocation} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 import decode from 'jwt-decode';
@@ -66,7 +66,7 @@ const NavBar = () => {
       >
         <Fade in={open}>
           <div className={classes.paper}>
-            <Auth/>
+            <Auth handleClose={handleClose}/>
           </div>
         </Fade>
       </Modal>
@@ -74,27 +74,29 @@ const NavBar = () => {
      <AppBar className={classes.appBar} position="static" color="inherit">
       <div className={classes.brandContainer}>
         <Typography
-          component={Link}
-           to="/admin"
           className={classes.heading}
           variant="h6"
           align="center"
+          component={Link} to="/admin"
         >
-         Back
+         Cargo Transport
         </Typography>
         <img className={classes.image} src={Cargo} alt="icon" height="60" />
         <p onClick={handleOpen} style={{cursor:'pointer',backgroundColor:'#00bb77',marginLeft:'2%',color:'#fff'}}>ADD</p>
-         <p onClick={handlePrint} style={{cursor:'pointer',backgroundColor:'#00bb77',marginLeft:'2%',color:'#fff'}}>Print</p>
+        <p onClick={handlePrint} style={{cursor:'pointer',backgroundColor:'#00bb77',marginLeft:'5%',color:'#fff'}}>Print</p>
       </div>
 
       <Toolbar className={classes.toolbar}>
         {user?(
           <div className={classes.profile}>
-         <Avatar className={classes.purple} alt={user.result.name}src={user.result.imageUrl}>{user.result.name.charAt(0)}</Avatar>
-         <Typography className={classes.userName} variant="h6">{user.result.name}</Typography>
+         <Avatar className={classes.purple} alt={user.result.name==="ADMIN"||user.result.name==="admin"?user.result.name:"Admin"}src="cargo Transport">
+           {user.result.name==="ADMIN"||user.result.name==="admin"?user.result.name.charAt(0):"A"}
+           </Avatar>
+         <Typography className={classes.userName} variant="h6">{user.result.name==="ADMIN"||user.result.name==="admin"?user.result.name:'Admin'}</Typography>
+          <Button variant="contained" className={classes.logout} color="secondary"onClick={Logout}>Logout</Button>
          </div>
         ):( 
-         <></>
+        <Button component={Link} to="/"  variant="contained"color="primary">Sign In</Button>
         )}
          
       </Toolbar>

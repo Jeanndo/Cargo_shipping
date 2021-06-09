@@ -1,6 +1,6 @@
 import React,{useState}from "react";
 import TableCell from '@material-ui/core/TableCell';
-import {useDispatch,useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import {deleteTruck} from "../../../redux/actions/trucks";
