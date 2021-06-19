@@ -2,22 +2,22 @@
 
 # Set up
 # Installing Node modules 
-  # type 
+  # Type 
    npm i or yarn add
 
 # Client side :
-  # type
+  # Type
    cd Client_Side hit enter
-   # type
+   # Type
 
    yarn start or npm start
-   # Backend Side
+   # Backend Side:
    
-   #type
+   # Type
    
    cd Server_side
    hit enter
-   # type
+   # Type
    npm start
 
 ![CargoShipping](https://github.com/Jeanndo/Cargo_Transport/blob/main/Client_Side/src/Assets/shipping.PNG)
