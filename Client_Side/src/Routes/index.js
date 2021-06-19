@@ -13,12 +13,11 @@ class Routes extends Component {
         return (
             <Router>
                 <Switch>
-                    <Route exact path="/" component ={CustomAuth}/>
+                    <Route exact path="/" component ={Landing}/>
                     <Route exact path="/admin" component ={Admin}/>
                     <Route exact path="/driver" component ={Driver}/>
                     <Route exact path="/print" component ={Printing}/>
                     <Route exact path="/client" component ={Client}/>
-                    <Route exact path="/landing" component ={Landing}/>
                     <Route exact path="/landing/getstarted" component ={GetStarted}/>
                 </Switch>
                 </Router>

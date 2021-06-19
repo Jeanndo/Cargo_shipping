@@ -24,7 +24,7 @@ const NavBar = ({users}) => {
    const Logout =()=>{
 
    dispatch({type:'LOGOUT'});
-   history.push('/landing');
+   history.push('/');
    setUser(null);
    }
   useEffect(()=>{
