@@ -79,11 +79,9 @@ const NavBar = () => {
           align="center"
           component={Link} to="/admin"
         >
-         Cargo Transport
+         Cargo Shipping
         </Typography>
         <img className={classes.image} src={Cargo} alt="icon" height="60" />
-        <p onClick={handleOpen} style={{cursor:'pointer',backgroundColor:'#00bb77',marginLeft:'2%',color:'#fff'}}>ADD</p>
-        <p onClick={handlePrint} style={{cursor:'pointer',backgroundColor:'#00bb77',marginLeft:'5%',color:'#fff'}}>Print</p>
       </div>
 
       <Toolbar className={classes.toolbar}>
@@ -93,7 +91,7 @@ const NavBar = () => {
            {user.result.name==="ADMIN"||user.result.name==="admin"?user.result.name.charAt(0):"A"}
            </Avatar>
          <Typography className={classes.userName} variant="h6">{user.result.name==="ADMIN"||user.result.name==="admin"?user.result.name:'Admin'}</Typography>
-          <Button variant="contained" className={classes.logout} color="secondary"onClick={Logout}>Logout</Button>
+          <Button variant="outlined" className={classes.logout} color="secondary"onClick={Logout}>Logout</Button>
          </div>
         ):( 
         <Button component={Link} to="/"  variant="contained"color="primary">Sign In</Button>

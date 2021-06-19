@@ -17,7 +17,10 @@ export const signin = (formData, history) => async (dispatch) => {
       data?.result?.role === "ADMIN"
     ) {
       history.push("/admin");
-    }else if(data?.result?.role === "client"|| data?.result?.role === "CLIENT") {
+    } else if (
+      data?.result?.role === "client" ||
+      data?.result?.role === "CLIENT"
+    ) {
       history.push("/client");
     }
   } catch (error) {
@@ -30,7 +33,14 @@ export const signup = (formData, history) => async (dispatch) => {
     //signup the user
     const { data } = await api.signUp(formData);
     dispatch({ type: AUTH, data });
-    history.push("/admin");
+    if (data?.result?.role === "client") {
+      history.push("/client");
+    } else if (
+      data?.result?.role === "admin" ||
+      data?.result?.role === "ADMIN"
+    ) {
+      history.push("/admin");
+    }
   } catch (error) {
     console.log(error);
   }

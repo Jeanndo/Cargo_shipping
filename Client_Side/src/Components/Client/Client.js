@@ -32,7 +32,7 @@ const Client = ()=>{
   },[dispatch]);
 
     return (
-   <div className={`${classes.root} container adminContainer`}>
+   <div className={`${classes.root} adminContainer`}>
   
     <Grid container spacing={3}>
       <Grid item xs={12}>

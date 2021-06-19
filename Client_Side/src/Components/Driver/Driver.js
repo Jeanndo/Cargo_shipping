@@ -30,7 +30,7 @@ const Driver = ()=>{
   },[dispatch]);
   
     return (
-   <div className={`${classes.root} container driver-container`}>
+   <div className={`${classes.root} driver-container`}>
     <Grid container spacing={3}>
       <Grid item xs={12}>
       <Navbar/>

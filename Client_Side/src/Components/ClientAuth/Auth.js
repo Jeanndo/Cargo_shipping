@@ -55,7 +55,7 @@ const Auth = () => {
                        <>
                        <Input name="firstName"label="First Name" handleChange={handleChange} autoFocus half/>
                        <Input name="lastName"label="Last Name" handleChange={handleChange} half/>
-                       <Input name="role" label="Role" handleChange={handleChange} type="text"/>
+                       {/* <Input name="role" label="Role" handleChange={handleChange} type="text"/> */}
                        <Input name="phone" label="Phone" handleChange={handleChange} type="number"/>
                        </>
                    )
@@ -65,13 +65,13 @@ const Auth = () => {
                {isSignup &&<Input name="confirmPassword" label="Confirm Password" handleChange={handleChange} type="password"/>}
              
              </Grid>
-             <Button type="submit" variant="contained" color="primary" className={classes.submit} fullWidth>
+             <Button type="submit" variant="outlined" color="primary" className={classes.submit} fullWidth>
                  {isSignup? 'Sign Up':'Sign In'}
              </Button>
             
              <Grid container justify="flex-end">
               <Grid item>
-              <Button onClick={switchMode}>
+              <Button onClick={switchMode} style={{marginLeft:'-15%'}}>
                   {isSignup? "Already have an account? Sign In":"Don't have an account? Sign Up"}
               </Button>
               </Grid>

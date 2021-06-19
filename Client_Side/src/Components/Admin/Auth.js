@@ -59,7 +59,7 @@ const Auth = ({ handleClose }) => {
           <Avatar className={classes.avatar}>
             <LockOutlinedIcon />
           </Avatar>
-          <Typography variant="h6">Welcome To Cargo Transport</Typography>
+          <Typography variant="h6">Welcome To Cargo Shipping</Typography>
           <hr style={{ backgroundColor: "#000" }} />
           <Typography variant="h5">Add Employee</Typography>
           <form className={classes.form} onSubmit={handleSubmit}>
@@ -101,7 +101,7 @@ const Auth = ({ handleClose }) => {
             </Grid>
             <Button
               type="submit"
-              variant="contained"
+              variant="outlined"
               color="primary"
               className={classes.submit}
               fullWidth

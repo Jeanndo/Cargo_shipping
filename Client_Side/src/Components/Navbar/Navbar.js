@@ -43,7 +43,7 @@ const NavBar = () => {
           variant="h6"
           align="center"
         >
-         Cargo Transport
+         Cargo Shiping
         </Typography>
         <img className={classes.image} src={Cargo} alt="icon" height="60" />
       </div>

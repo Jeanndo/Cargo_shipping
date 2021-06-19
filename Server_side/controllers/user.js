@@ -1,6 +1,7 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import User from "../models/user.js";
+import mongoose from 'mongoose';
 
 export const signin = async (req, res) => {
   const { email, password } = req.body;
@@ -61,3 +62,14 @@ try {
 }
   
 }
+
+  export const deleteUser = async (req, res) => {
+    const { id: _id } = req.params;
+    console.log(req.params);
+    if (!mongoose.Types.ObjectId.isValid(_id))
+      return res.status(404).send("Not User With that id");
+  
+    await User.findByIdAndRemove(_id);
+    // console.log("Deleted")
+    res.json({ message: "User Removed Successfully!!👍" });
+  };

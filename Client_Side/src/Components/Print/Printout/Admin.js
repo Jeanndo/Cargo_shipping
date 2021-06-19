@@ -6,6 +6,8 @@ import Grid from "@material-ui/core/Grid";
 import { useDispatch } from "react-redux";
 import { getTrucks } from "../../../redux/actions/admin";
 import Navbar from "./Navbar/Navbar";
+import {Button} from "@material-ui/core";
+import {Link} from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,10 +30,17 @@ const Admin = () => {
   }, [dispatch]);
 
   return (
-    <div className={`${classes.root} container adminContainer`}>
+    <div className={`${classes.root} adminContainer`}>
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <Navbar />
+          <Button 
+          style={{marginTop:'-7%'}}
+          color="primary"
+           component={Link} to="/admin"
+          variant="outlined"
+          >
+            Go Back
+            </Button>
         </Grid>
         <Grid item xs={12}>
           <Paper className={classes.paper}>
