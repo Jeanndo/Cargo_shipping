@@ -21,7 +21,7 @@ const GetStarted = () => {
       </Button>
       <Button
         component ={Link}
-        to="/landing"
+        to="/"
         style={{color:'#fff',margin:'5% 0 0 5%'}}
        variant="outlined" onClick={showDrawer}>
         Go Back
