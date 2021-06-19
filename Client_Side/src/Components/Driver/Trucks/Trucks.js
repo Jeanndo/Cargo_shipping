@@ -29,15 +29,15 @@ const Trucks = ({ setCurrentId }) => {
       <Table className={classes.table} aria-label="caption table">
         <TableHead>
           <TableRow>
-            <TableCell><b>Driver</b></TableCell>
-            <TableCell align="right"><b>License</b> </TableCell>
+            <TableCell><b>Customer Name</b></TableCell>
+            <TableCell align="right"><b>Cargo ID</b> </TableCell>
             <TableCell align="right"><b>Product</b></TableCell>
             <TableCell align="right"><b>Quantity</b></TableCell>
             <TableCell align="right"><b>Location</b></TableCell>
-            <TableCell align="right"><b>Cargo ID</b></TableCell>
+            <TableCell align="right"><b>Contact</b></TableCell>
             <TableCell align="right"><b>Destination</b></TableCell>
-            <TableCell align="right"><b>Action</b></TableCell>
-            <TableCell align="right"><b>Action</b></TableCell>
+            <TableCell align="right"><b>Edit</b></TableCell>
+            <TableCell align="right"><b>Delete</b></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

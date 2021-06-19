@@ -20,7 +20,7 @@ const NavBar = () => {
    const Logout =()=>{
 
    dispatch({type:'LOGOUT'});
-   history.push('/');
+   history.push('/landing');
    setUser(null);
    }
   useEffect(()=>{
@@ -47,7 +47,7 @@ const NavBar = () => {
           variant="h6"
           align="center"
         >
-         Cargo Transport
+         Cargo Shipping
         </Typography>
         <img className={classes.image} src={Cargo} alt="icon" height="60" />
       </div>
@@ -57,10 +57,10 @@ const NavBar = () => {
           <div className={classes.profile}>
          <Avatar className={classes.purple} alt={user.result.name}src={user.result.imageUrl}>{user.result.name.charAt(0)}</Avatar>
          <Typography className={classes.userName} variant="h6">{user.result.name}</Typography>
-          <Button variant="contained" className={classes.logout} color="secondary"onClick={Logout}>Logout</Button>
+          <Button variant="outlined" className={classes.logout} color="secondary"onClick={Logout}>Logout</Button>
          </div>
         ):( 
-        <Button component={Link} to="/"  variant="contained"color="primary">Sign In</Button>
+        <Button component={Link} to="/"  variant="outlined"color="primary">Sign In</Button>
         )}
          
       </Toolbar>

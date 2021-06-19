@@ -2,7 +2,7 @@ import axios from 'axios';
 
 //const url = 'http://localhost:5000/trucks';
 
-const API = axios.create({baseURL:'http://localhost:5000'})
+const API = axios.create({baseURL:'http://localhost:9000'})
 
 API.interceptors.request.use((req) => {
     if (localStorage.getItem('profile')) {
@@ -22,5 +22,7 @@ export const deleteTruck = (id)=>API.delete(`/trucks/${id}`);
 export const signIn = (formData)=>API.post('/user/signin',formData);
 export const signUp = (formData)=>API.post('/user/signup',formData);
 export const fetchUsers =()=>API.get('/user');
+export const deleteUser = (id)=>API.delete(`/user/${id}`);
+
 
 

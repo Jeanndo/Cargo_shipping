@@ -1,3 +1,3 @@
 # Cargo_Transport
 
-![](Image/cargo.png)
+![](./Image/cargo.png)

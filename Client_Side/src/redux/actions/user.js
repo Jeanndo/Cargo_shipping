@@ -1,4 +1,4 @@
-import { FETCH_ALL_USERS} from '../../constants/actionTypes';
+import { FETCH_ALL_USERS,DELETE_USER} from '../../constants/actionTypes';
 import * as api from '../../api/index';
 export const getUsers = () => async (dispatch) => {
     try {
@@ -7,5 +7,15 @@ export const getUsers = () => async (dispatch) => {
       dispatch({ type: FETCH_ALL_USERS, payload: data });
     } catch (error) {
       console.log(error);
+    }
+  };
+
+  export const deleteUser= (id) => async (dispatch) => {
+    try {
+      await api.deleteUser(id)
+  
+      dispatch({ type: DELETE_USER, payload: id });
+    } catch (error) {
+      console.log(error.message);
     }
   };

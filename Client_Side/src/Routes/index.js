@@ -5,6 +5,9 @@ import Driver from '../Components/Driver/Driver';
 import Printing from '../Components/Print/Expample';
 import CustomAuth from '../Components/ClientAuth/Auth';
 import Client from '../Components/Client/Client';
+import Landing from '../Components/LandingPage/Landing';
+import GetStarted from '../Components/LandingPage/GetStarted';
+
 class Routes extends Component {
     render(){
         return (
@@ -15,6 +18,8 @@ class Routes extends Component {
                     <Route exact path="/driver" component ={Driver}/>
                     <Route exact path="/print" component ={Printing}/>
                     <Route exact path="/client" component ={Client}/>
+                    <Route exact path="/landing" component ={Landing}/>
+                    <Route exact path="/landing/getstarted" component ={GetStarted}/>
                 </Switch>
                 </Router>
         )

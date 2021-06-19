@@ -9,8 +9,9 @@ import {Link,useHistory,useLocation} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 import decode from 'jwt-decode';
 import Auth from '../Auth';
+import Users from  '../AllUsers';
 
-const NavBar = () => {
+const NavBar = ({users}) => {
   const classes = useStyles();
   const dispatch = useDispatch();
   const history = useHistory();
@@ -23,7 +24,7 @@ const NavBar = () => {
    const Logout =()=>{
 
    dispatch({type:'LOGOUT'});
-   history.push('/');
+   history.push('/landing');
    setUser(null);
    }
   useEffect(()=>{
@@ -78,11 +79,12 @@ const NavBar = () => {
           variant="h6"
           align="center"
         >
-         Cargo Transport
+         Cargo Shipping
         </Typography>
         <img className={classes.image} src={Cargo} alt="icon" height="60" />
-        <p onClick={handleOpen} style={{cursor:'pointer',backgroundColor:'#00bb77',marginLeft:'2%',color:'#fff'}}>ADD</p>
-        <p onClick={handlePrint} style={{cursor:'pointer',backgroundColor:'#00bb77',marginLeft:'5%',color:'#fff'}}>Print</p>
+        <Button variant="outlined" color="primary" onClick={handlePrint} style={{marginLeft:'10px',marginRight:'10px'}}>Print</Button>
+        <Button variant="outlined" color="primary" onClick={handleOpen} className="ml-5">Add Employee</Button>
+         <Users users={users}/>
       </div>
 
       <Toolbar className={classes.toolbar}>
@@ -92,10 +94,10 @@ const NavBar = () => {
            {user.result.name==="ADMIN"||user.result.name==="admin"?user.result.name.charAt(0):"A"}
            </Avatar>
          <Typography className={classes.userName} variant="h6">{user.result.name==="ADMIN"||user.result.name==="admin"?user.result.name:'Admin'}</Typography>
-          <Button variant="contained" className={classes.logout} color="secondary"onClick={Logout}>Logout</Button>
+          <Button variant="outlined" className={classes.logout} color="secondary"onClick={Logout}>Logout</Button>
          </div>
         ):( 
-        <Button component={Link} to="/"  variant="contained"color="primary">Sign In</Button>
+        <Button component={Link} to="/"  variant="outlined"color="primary">Sign In</Button>
         )}
          
       </Toolbar>

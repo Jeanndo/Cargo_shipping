@@ -45,16 +45,16 @@ console.log("TruckData",truckData);
         <form className={`${classes.root} form`} noValidate onSubmit={handleSubmit} autoComplete="off">
         <div>
         <TextField
-            label="Driver Name"
-            placeholder="Driver Name"
+            label="Customer Name"
+            placeholder="Customer Name"
             multiline
             variant="outlined"
             value={truckData.driver}
             onChange={(e)=>setTrucData({...truckData,driver:e.target.value})}
           />
            <TextField
-            label="License Plate"
-            placeholder="License Plate"
+            label="Cargo-ID"
+            placeholder="Cargo-ID"
             multiline
             variant="outlined"
             value={truckData.licensePlate}
@@ -81,12 +81,12 @@ console.log("TruckData",truckData);
             placeholder="Location"
             multiline
             variant="outlined"
-            value={truckData.Locatin}
+            value={truckData.Location}
             onChange={(e)=>setTrucData({...truckData,Location:e.target.value})}
           />
           <TextField
-            label="Cargo-ID"
-            placeholder="Cargo ID"
+            label="Contact"
+            placeholder="Contact"
             multiline
             variant="outlined"
             value={truckData.Cargo_ID}
@@ -102,7 +102,7 @@ console.log("TruckData",truckData);
           />
            
         </div>
-        <Button type="submit"variant="contained" color="primary">SAVE</Button>
+        <Button type="submit"variant="outlined" color="primary">ADD</Button>
       </form>
     )
 }
