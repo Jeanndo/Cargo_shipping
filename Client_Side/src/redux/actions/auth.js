@@ -10,7 +10,7 @@ export const signin = (formData, history) => async (dispatch) => {
     dispatch({ type: AUTH, data });
 
     console.log(data?.result?.name);
-    if (data?.result?.role === "driver" || data?.result?.role === "DRIVER") {
+    if (data?.result?.role === "employee" || data?.result?.role === "EMPLOYEE") {
       history.push("/driver");
     } else if (
       data?.result?.role === "admin" ||
